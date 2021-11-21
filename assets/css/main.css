@@ -350,6 +350,7 @@ font-weight: bold;
 
 .blog-wrapper{
   max-width: 450px;
+  width: 36%;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   margin: auto;
@@ -376,6 +377,24 @@ font-weight: bold;
   /* box-shadow: 0px 1px 5px rgba(0,0,0,0.1); */
 }
 
+/* scrooll bar for search ressults */
+/* width */
+.autocom-box::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.autocom-box::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+/* Handle */
+.autocom-box::-webkit-scrollbar-thumb {
+  background: rgb(197, 197, 197); 
+}
+/* Handle on hover */
+.autocom-box::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+/* end */
 .blog-search-input.active input{
   border-radius: 5px 5px 0 0;
 }
@@ -384,13 +403,13 @@ font-weight: bold;
   padding: 0;
   opacity: 0;
   pointer-events: none;
-  max-height: 280px;
+  max-height: 380px;
   overflow-y: auto;
   /* z-index: 20; */
 }
 
 .blog-search-input.active .autocom-box{
-  padding: 10px 8px;
+  /* padding: 10px 8px; */
   opacity: 1;
   /* z-index: 20; */
   pointer-events: auto;
@@ -399,12 +418,13 @@ font-weight: bold;
 
 .autocom-box li{
   list-style: none;
-  padding: 8px 12px;
+  padding: 18px 24px;
   display: block;
   width: 100%;
   cursor: default;
   border-radius: 3px;
   color: black;
+  border-bottom: 0.5px solid #dddbdb6e;
 }
 
 .blog-search-input.active input{
@@ -1054,6 +1074,9 @@ font-family: system-ui;
     padding: 0;
     transition: none;
  }
+ .blog-wrapper{
+   width: 100%;
+ }
  .post-nav a{
    font-size: small;
    width: 48%;
@@ -1088,6 +1111,10 @@ font-family: system-ui;
  .searchbar {
   flex-direction: row;
 }
+.blog-wrapper{
+  width: 100%;
+  max-width: 100%;
+}
 .share-box{
   display: none;
 }
@@ -1110,6 +1137,10 @@ font-family: system-ui;
   .share-box{
     display: none;
   }
+  
+ .blog-wrapper{
+  width: 100%;
+}
   .recent-posts{
     max-width: 1200px!important;
    width: 100%!important;
@@ -1212,6 +1243,10 @@ font-family: system-ui;
   .searchbar{
     left: auto;
   }
+  
+ .blog-wrapper{
+  width: 100%;
+}
   /* .blog-search-results{
     width: 100%;
     left: auto;

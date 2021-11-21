@@ -89,14 +89,14 @@ layout: table_wrappers
     searchResultTemplate: '<li>\
       <a href="{{ site.url }}{url}" class="text-decoration-none blog-search-result-item">\
           <span class="text-small">{title}</span>\
-          <br><span style="font-size:10px;color:gray;">{date}</span>\
-          <span class="text-dark text-decoration-none text-capitalize"style="font-size:12px;"> {url}</span>\
+          <br><span class="text-muted text-decoration-none text-capitalize"style="font-size:12px;"> {url}</span>\
       </a>\
   </li>',
   limit: 1000,
   debounceTime: 10
   })
 </script>
+<!--  <br><span style="font-size:10px;color:gray;">{date} | date_to_string</span>\ -->
 <script>
   var searchInput = $("#search-input");
   var searchResults = $("#blog-searchresult");
