@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-toc"
   spec.add_runtime_dependency 'wdm', '>= 0.1.0'
   spec.add_runtime_dependency "jekyll-paginate"
-  spec.add_runtime_dependency "jekyll-admin"
-  spec.add_runtime_dependency "liquid_reading_time"
+  # spec.add_runtime_dependency "jekyll-admin"
+  # spec.add_runtime_dependency "liquid_reading_time"
 
 end
