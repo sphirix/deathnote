@@ -5,6 +5,14 @@
         <div class="postcard-img">
             {% if author.pic %}
             <img class="img-border-circle avatar" src=" {{ author.pic }} " alt="Ven" />
+            {%else%}
+        {% assign min = 0 %}
+        {% assign max = 500 %}
+        {% assign diff = max | minus: min %}
+        {% assign random = "now" | date: "%N" | modulo: diff | plus: min %}
+        {% assign colors = 'red|green|blue|yellow|orange' | split: '|' %}
+        {% assign randval = random | slice:0 | to_integer %}
+            <span class="dot {{ colors[randval] }}-grad-img"></span>
             {%endif%}
         </div>
         <div class="postcard-title">
@@ -24,7 +32,8 @@
         {% endfor %}
     </div> -->
     <div class="postcard-desc">
-        <p>{{ post.excerpt }}</p>    
+        <p>{{ post.excerpt }}   
+       <!-- {% assign colors = ["red","green","blue","yellow","orange"] %} --></p> 
     </div>
     <div class="card-foot">
         <span class="foot-link">
