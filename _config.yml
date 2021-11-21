@@ -16,7 +16,7 @@
 title: Lethal DFIR
 # description: A Jekyll theme for documentation
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://d311-122-173-210-112.ngrok.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # gem: [jekyll-admin]
 
 permalink: pretty
