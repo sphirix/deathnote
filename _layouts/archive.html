@@ -1,0 +1,20 @@
+---
+layout: original
+title: Archive
+---
+
+<!-- Begin List Posts
+================================================== -->
+
+<h1>Archive of posts with <span>{{ page.type }} '{{ page.title }}'</span></h1>
+
+
+{% for post in page.posts %}
+<div class="allposts">
+    <article class="singlepost">
+        <div class="d-flex container-fluid justify-content-start row row-cols-xl-4 mb-2">
+            {% include postbox.html %}
+        </div>
+    </article>
+</div>
+{% endfor %}

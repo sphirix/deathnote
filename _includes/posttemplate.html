@@ -1,0 +1,183 @@
+<!-- <style>
+  * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  h5 {
+    margin: 0px;
+    font-size: 1.4em;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .center {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* End Non-Essential  */
+
+  .property-card {
+    height: 20em;
+    width: 16em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2em;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 16px;
+    overflow: hidden;
+    -webkit-box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+    box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  }
+
+  /* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+  /* Top Half of card, image. */
+
+  .property-image {
+    height: 8em;
+    width: 16em;
+    padding: 1em 2em;
+    position: Absolute;
+    top: 0px;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-image: url('https://cdn.photographylife.com/wp-content/uploads/2017/01/What-is-landscape-photography.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  /* Bottom Card Section */
+
+  .property-description {
+    background-color: #FAFAFC;
+    height: 14em;
+    width: 16em;
+    position: absolute;
+    bottom: 0em;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 0.5em 1em;
+    text-align: center;
+  }
+
+  /* Social Icons */
+
+  .property-social-icons {
+    width: 1em;
+    height: 1em;
+    background-color: black;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    -webkit-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -o-transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  /* Property Cards Hover States */
+
+  .property-card:hover .property-description {
+    height: 0em;
+    padding: 0px 1em;
+  }
+
+  .property-card:hover .property-image {
+    height: 20em;
+  }
+
+  .property-card:hover .property-social-icons {
+    background-color: white;
+  }
+
+  .property-card:hover .property-social-icons:hover {
+    background-color: none;
+    cursor: pointer;
+  }
+
+
+  .property-image-title {
+    text-align: center;
+    position: Relative;
+    top: 30%;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+
+    color: white;
+    font-size: 1.2em;
+  }
+
+  .property-card:hover .property-image-title {
+    opacity: 1;
+  }
+</style> -->
+
+
+<div class="allposts">
+  <article class="singlepost">
+    <div class="d-flex container-fluid justify-content-start row row-cols-xl-4 mb-2">
+      {% for post in site.posts %}
+      <div class="col me-auto">
+        <div class="property-card mt-2">
+          {% assign postdate = post.date | date_to_string %}
+          {% assign year = postdate | split: ' ' %}
+          <div class="date">
+            <div class="day">{{ year[0] }} </div>
+            <div class="month"> {{ year[1] }} </div>
+            <!-- <div class="year"> {{ year[2] }} </div> -->
+          </div>
+          {% if post.image %}
+          <div class="property-image" style="background-image: url('{{ post.image | relative_url}}');">
+            {% else %}
+            <div class="property-image">
+              {% endif %}
+              <div class="property-image-title">
+                <a href="{{ site.baseurl }}{{ post.url }}" class="text-decoration-none text-white">
+                  <h5 style="margin: 0px;font-size: 1.4em;font-weight: 700;height: 68px;word-wrap: break-word;overflow: hidden;">{{ post.title }}</h5>
+                </a>
+                {% for cato in post.categories %}
+                <a class="badge bg-warning text-dark text-decoration-none text-capitalize"
+                  style="font-size: small;margin-right: 6px;" href="{{site.baseurl}}/categories#{{ cato | replace: " ","
+                  -" }}">{{ cato }}</a>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="property-description">
+              <h5
+                style="display:flex;align-items: center;justify-content: center; font-size: 18px;font-weight: bold;height: 45px;word-wrap: break-word;overflow: hidden;">
+                {{ post.title }}</h5>
+    
+    <div class="excerpt  p-2" style="font-size: 12px; height: 148px;word-wrap: break-word;overflow: hidden;">
+                {{ post.excerpt }}
+              </div>
+            </div>
+            <div class="card-footer">
+              <a href="{{ site.baseurl }}{{ post.url }}">
+                <div class="property-social-icons">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </article>
+</div>
