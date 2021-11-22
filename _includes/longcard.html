@@ -4,13 +4,13 @@
         {% assign author = site.data.authors[post.author] %}
         <div class="postcard-img">
             {% if author.pic %}
-            <img class="img-border-circle avatar" src=" {{ author.pic }} " alt="Ven" />
+            <img class="img-border-circle avatar" src=" {{ author.pic | relative_url }} " alt="Ven" />
             {%else%}
         {% assign min = 0 %}
-        {% assign max = 500 %}
+        {% assign max = 600 %}
         {% assign diff = max | minus: min %}
         {% assign random = "now" | date: "%N" | modulo: diff | plus: min %}
-        {% assign colors = 'red|green|blue|yellow|orange' | split: '|' %}
+        {% assign colors = 'red|green|blue|yellow|orange|pink' | split: '|' %}
         {% assign randval = random | slice:0 | to_integer %}
             <span class="dot {{ colors[randval] }}-grad-img"></span>
             {%endif%}
