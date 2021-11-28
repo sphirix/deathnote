@@ -382,20 +382,20 @@ font-weight: bold;
 
 /* scrooll bar for search ressults */
 /* width */
-.autocom-box::-webkit-scrollbar {
+.autocom-box::-webkit-scrollbar, .site-nav::-webkit-scrollbar{
   width: 10px;
 }
 /* Track */
-.autocom-box::-webkit-scrollbar-track {
+.autocom-box::-webkit-scrollbar-track, .site-nav::-webkit-scrollbar-track {
   background: #f1f1f1; 
 }
 /* Handle */
-.autocom-box::-webkit-scrollbar-thumb {
+.autocom-box::-webkit-scrollbar-thumb, .site-nav::-webkit-scrollbar-thumb {
   background: rgb(197, 197, 197); 
 }
 /* Handle on hover */
-.autocom-box::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+.autocom-box::-webkit-scrollbar-thumb:hover, .site-nav::-webkit-scrollbar-thumb:hover {
+  background: rgb(143, 143, 143); 
 }
 /* end */
 .blog-search-input.active input{
@@ -1308,8 +1308,13 @@ font-family: system-ui;
      max-width: 100%;
    } */
 }
+@media (max-width: 800px) {
+  body{
+     padding-bottom: 0px!important;
+  }
+}
 @media (max-width: 576px) {
   .postcard{
-     width: 100%!important;
+     width: 90%!important;
   }
 }
